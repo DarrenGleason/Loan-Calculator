@@ -42,7 +42,7 @@ Partial Class Form3
         Me.Label1.Location = New System.Drawing.Point(732, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 22)
-        Me.Label1.TabIndex = 0
+        Me.Label1.TabIndex = 8
         Me.Label1.Text = "Page 3"
         '
         'Label2
@@ -52,7 +52,7 @@ Partial Class Form3
         Me.Label2.Location = New System.Drawing.Point(226, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(337, 24)
-        Me.Label2.TabIndex = 1
+        Me.Label2.TabIndex = 0
         Me.Label2.Text = "Enter Monthly Payment Towards Loans"
         '
         'TextBox1
@@ -61,27 +61,29 @@ Partial Class Form3
         Me.TextBox1.Location = New System.Drawing.Point(290, 52)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(217, 30)
-        Me.TextBox1.TabIndex = 4
+        Me.TextBox1.TabIndex = 1
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.LightCyan
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(533, 339)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(201, 39)
-        Me.Button1.TabIndex = 5
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Try Snowball Method"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.Color.LightCyan
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(63, 357)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(201, 39)
-        Me.Button2.TabIndex = 6
+        Me.Button2.TabIndex = 2
         Me.Button2.Text = "Try Avalanche Method"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'TextBox2
         '
@@ -90,7 +92,7 @@ Partial Class Form3
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(201, 249)
-        Me.TextBox2.TabIndex = 7
+        Me.TextBox2.TabIndex = 5
         Me.TextBox2.Text = "The Snowball Method is one way of paying off multiple loans. This method starts w" &
     "ith payments on the account with the smallest balance, while paying the minimum " &
     "amount on the larger accounts.  "
@@ -102,7 +104,7 @@ Partial Class Form3
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(201, 267)
-        Me.TextBox3.TabIndex = 8
+        Me.TextBox3.TabIndex = 4
         Me.TextBox3.Text = resources.GetString("TextBox3.Text")
         '
         'Label3
@@ -112,33 +114,35 @@ Partial Class Form3
         Me.Label3.Location = New System.Drawing.Point(71, 399)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 24)
-        Me.Label3.TabIndex = 9
+        Me.Label3.TabIndex = 6
         Me.Label3.Text = "Formula"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(529, 399)
+        Me.Label4.Location = New System.Drawing.Point(549, 381)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(79, 24)
-        Me.Label4.TabIndex = 10
+        Me.Label4.TabIndex = 7
         Me.Label4.Text = "Formula"
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.LightCyan
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Location = New System.Drawing.Point(657, 401)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(131, 37)
-        Me.Button3.TabIndex = 11
+        Me.Button3.TabIndex = 9
         Me.Button3.Text = "Quit"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label4)

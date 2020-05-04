@@ -40,13 +40,15 @@ Partial Class Form1
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.LightCyan
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.LightCyan
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(321, 282)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(160, 46)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Get Started"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -60,18 +62,20 @@ Partial Class Form1
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.LightCyan
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Location = New System.Drawing.Point(657, 401)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(131, 37)
-        Me.Button3.TabIndex = 4
+        Me.Button3.TabIndex = 3
         Me.Button3.Text = "Quit"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label2)

@@ -30,38 +30,42 @@ Partial Class Form4
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.LightCyan
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(12, 401)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(131, 37)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Change Plan"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.Color.LightCyan
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(197, 401)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(131, 37)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Save Report"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.LightCyan
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Location = New System.Drawing.Point(657, 401)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(131, 37)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Quit"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
