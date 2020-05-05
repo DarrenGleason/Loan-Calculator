@@ -8,7 +8,7 @@
         Form4.Show()
         Me.Hide()
     End Sub
-
+    'Test Comment 2
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Application.Exit()
     End Sub
