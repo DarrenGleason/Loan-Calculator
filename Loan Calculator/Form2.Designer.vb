@@ -66,9 +66,9 @@ Partial Class Form2
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(279, 132)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(201, 24)
+        Me.Label3.Size = New System.Drawing.Size(108, 24)
         Me.Label3.TabIndex = 9
-        Me.Label3.Text = "How much do you owe"
+        Me.Label3.Text = "Total Owed"
         '
         'Label4
         '
