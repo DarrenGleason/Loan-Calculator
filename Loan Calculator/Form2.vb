@@ -40,7 +40,7 @@ Public Class Form2
             third.period = ComboBox1.Text
         End If
         i = i + 1
-
+        'Added another test comment
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
