@@ -46,7 +46,7 @@ Partial Class Form5
         Me.Button3.Location = New System.Drawing.Point(329, 136)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(131, 37)
-        Me.Button3.TabIndex = 4
+        Me.Button3.TabIndex = 3
         Me.Button3.Text = "Quit"
         Me.Button3.UseVisualStyleBackColor = False
         '
@@ -57,7 +57,7 @@ Partial Class Form5
         Me.Label2.Location = New System.Drawing.Point(30, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(318, 24)
-        Me.Label2.TabIndex = 5
+        Me.Label2.TabIndex = 1
         Me.Label2.Text = "Enter the Number of Loans you have"
         '
         'Button1
@@ -66,7 +66,7 @@ Partial Class Form5
         Me.Button1.Location = New System.Drawing.Point(86, 114)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(121, 38)
-        Me.Button1.TabIndex = 6
+        Me.Button1.TabIndex = 2
         Me.Button1.Text = "Continue"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -76,7 +76,7 @@ Partial Class Form5
         Me.TextBox1.Location = New System.Drawing.Point(86, 60)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(121, 29)
-        Me.TextBox1.TabIndex = 7
+        Me.TextBox1.TabIndex = 1
         '
         'Form5
         '
@@ -89,6 +89,7 @@ Partial Class Form5
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form5"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Repayment Calculator"
         Me.ResumeLayout(False)
         Me.PerformLayout()

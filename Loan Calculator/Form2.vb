@@ -6,12 +6,12 @@
 End Structure
 
 Public Class Form2
-    Dim maxloans As Integer = Form5.loanNum
-    Dim loans(maxloans) As loan  'Array of loan structs which contains as many loans as are entered on Form2
-    Dim i As Integer
+    Public maxloans As Integer
+    Public loans(Form5.loanNum + 1) As loan  'Array of loan structs which contains as many loans as are entered on Form2
+    Dim i As Integer 'i is initialized in FormLoad
 
-    Sub initem()  'Initialize loans struct
-        For num As Integer = 0 To maxloans
+    Sub initem()  'Initialize loans struct 
+        For num As Integer = 0 To Form5.loanNum - 1
             loans(num).name = "N/A"
             loans(num).principle = "000"
             loans(num).interest = 0.0
@@ -29,47 +29,36 @@ Public Class Form2
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Button2.Show()
-        Button3.Show()
+        maxloans = Form5.loanNum - 1
 
 
-
+        If i = maxloans Then 'Checks if max amount has been implemented
+            Label7.Show()
+            Label7.Text = "All loans have been entered!"
+            Label8.Hide()
+            Button1.Hide()
+            Button3.Show()
+            Exit Sub
+        End If
 
         loans(i).name = TextBox1.Text
         loans(i).principle = TextBox2.Text
         loans(i).principle = ComboBox2.Text
         loans(i).period = ComboBox1.Text
 
-        'If i = 0 Then
-        'Dim first As loans = New loans
-        'first.name = TextBox1.Text
-        'first.principle = TextBox2.Text
-        'first.interest = ComboBox2.Text
-        'first.period = ComboBox1.Text
-        ' End If
-        ' If i = 1 Then
-        'Dim second As loans = New loans
-        ' Second.name = TextBox1.Text
-        ' Second.principle = TextBox2.Text
-        ' Second.interest = ComboBox2.Text
-        ' Second.period = ComboBox1.Text
-        ' End If
-        'If i = 2 Then
-        'Dim third As loans = New loans
-        ' third.name = TextBox1.Text
-        'third.principle = TextBox2.Text
-        'third.interest = ComboBox2.Text
-        'third.period = ComboBox1.Text
-        ' End If
         i = i + 1
-    End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
         TextBox1.Text = ""
         TextBox2.Text = ""
         ComboBox1.Text = ""
         ComboBox2.Text = ""
+        Label8.Text = "Please enter Loan# " + (i + 1).ToString
+
+
     End Sub
+
+
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Application.Exit()
@@ -78,12 +67,20 @@ Public Class Form2
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         initem() 'Calls initem function above to initialize array of structs
         Label7.Hide()
-        Button2.Hide()
         Button3.Hide()
+        Label9.Text = "Number of loans-" + (Form5.loanNum + 2).ToString
         i = 0
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
 
     End Sub
 End Class
