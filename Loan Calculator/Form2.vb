@@ -6,11 +6,10 @@
 End Structure
 
 Public Class Form2
-    Public maxloans As Integer
     Public loans(Form5.loanNum + 1) As loan  'Array of loan structs which contains as many loans as are entered on Form2
     Dim i As Integer 'i is initialized in FormLoad
 
-    Sub initem()  'Initialize loans struct 
+    Sub initem()  'Initialize loans struct based on what is entered on Form5(The number of loans)
         For num As Integer = 0 To Form5.loanNum - 1
             loans(num).name = "N/A"
             loans(num).principle = "000"
@@ -20,40 +19,34 @@ Public Class Form2
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'Moves from Form2->Form3
         Form3.Show()
         Me.Hide()
-        Dim P, A, i, N As Double
-
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        maxloans = Form5.loanNum - 1
 
-
-        If i = maxloans Then 'Checks if max amount has been implemented
-            Label7.Show()
-            Label7.Text = "All loans have been entered!"
-            Label8.Hide()
-            Button1.Hide()
-            Button3.Show()
+        If i = Form5.loanNum - 1 Then 'Checks if all loans have been entered
+            Label7.Show()             'Shows "All loans have been entered" message
+            Label8.Hide()             'Hides "Please enter loan#" message
+            Button1.Hide()            'Hides enter new loan button
+            Button3.Show()            'Shows Continue Button
             Exit Sub
         End If
 
-        loans(i).name = TextBox1.Text
+        loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
         loans(i).principle = TextBox2.Text
         loans(i).principle = ComboBox2.Text
         loans(i).period = ComboBox1.Text
 
-        i = i + 1
+        i = i + 1                           'Increments i
 
 
-        TextBox1.Text = ""
+        TextBox1.Text = ""                  'Resets Textboxes/Comboboxes
         TextBox2.Text = ""
         ComboBox1.Text = ""
         ComboBox2.Text = ""
-        Label8.Text = "Please enter Loan# " + (i + 1).ToString
+        Label8.Text = "Please enter Loan# " + (i + 1).ToString 'Prints message
 
 
     End Sub
@@ -65,11 +58,11 @@ Public Class Form2
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        initem() 'Calls initem function above to initialize array of structs
-        Label7.Hide()
-        Button3.Hide()
-        Label9.Text = "Number of loans-" + (Form5.loanNum + 2).ToString
-        i = 0
+        initem()            'Calls initem function above to initialize array of structs
+        Label7.Hide()       'Hides All Loans entered message
+        Button3.Hide()      'Hides finished button
+        Label9.Text = "Number of loans-" + (Form5.loanNum + 2).ToString 'Prints # of loans to be entered
+        i = 0               'Initializes i
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
