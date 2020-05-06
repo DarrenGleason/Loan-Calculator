@@ -6,8 +6,8 @@
 End Structure
 
 Public Class Form2
-    Dim maxloans = 30
-    Dim loans(maxloans) As loan  'Array of loan structs which contains up to 30 loans
+    Dim maxloans As Integer = Form5.loanNum
+    Dim loans(maxloans) As loan  'Array of loan structs which contains as many loans as are entered on Form2
     Dim i As Integer
 
     Sub initem()  'Initialize loans struct
@@ -31,6 +31,9 @@ Public Class Form2
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Button2.Show()
         Button3.Show()
+
+
+
 
         loans(i).name = TextBox1.Text
         loans(i).principle = TextBox2.Text
@@ -74,9 +77,13 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         initem() 'Calls initem function above to initialize array of structs
+        Label7.Hide()
         Button2.Hide()
         Button3.Hide()
         i = 0
     End Sub
 
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
 End Class

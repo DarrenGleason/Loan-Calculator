@@ -44,7 +44,7 @@ Partial Class Form3
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 22)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Page 3"
+        Me.Label1.Text = "Page 4"
         '
         'Label2
         '

@@ -37,6 +37,7 @@ Partial Class Form2
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -98,7 +99,7 @@ Partial Class Form2
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(56, 22)
         Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Page 2"
+        Me.Label6.Text = "Page 3"
         '
         'TextBox1
         '
@@ -189,12 +190,23 @@ Partial Class Form2
         Me.PictureBox1.TabIndex = 19
         Me.PictureBox1.TabStop = False
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
+        Me.Label7.Location = New System.Drawing.Point(116, 371)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(307, 24)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "error-Max number of loans entered"
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Button4)
@@ -234,4 +246,5 @@ Partial Class Form2
     Friend WithEvents Button4 As Button
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label7 As Label
 End Class
