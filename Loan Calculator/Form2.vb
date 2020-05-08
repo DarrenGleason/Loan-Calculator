@@ -26,6 +26,16 @@ Public Class Form2
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
+        loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
+        loans(i).principle = TextBox2.Text
+        loans(i).interest = ComboBox2.Text
+        loans(i).period = ComboBox1.Text
+
+        Console.WriteLine(loans(i).name)
+        Console.WriteLine(loans(i).principle)
+        Console.WriteLine(loans(i).interest)
+        Console.WriteLine(loans(i).period)
+
         If i = Form5.loanNum - 1 Then 'Checks if all loans have been entered
             Label7.Show()             'Shows "All loans have been entered" message
             Label8.Hide()             'Hides "Please enter loan#" message
@@ -33,11 +43,6 @@ Public Class Form2
             Button3.Show()            'Shows Continue Button
             Exit Sub
         End If
-
-        loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
-        loans(i).principle = TextBox2.Text
-        loans(i).principle = ComboBox2.Text
-        loans(i).period = ComboBox1.Text
 
         i = i + 1                           'Increments i
 
@@ -61,7 +66,6 @@ Public Class Form2
         initem()            'Calls initem function above to initialize array of structs
         Label7.Hide()       'Hides All Loans entered message
         Button3.Hide()      'Hides finished button
-        Label9.Text = "Number of loans-" + (Form5.loanNum + 2).ToString 'Prints # of loans to be entered
         i = 0               'Initializes i
     End Sub
 

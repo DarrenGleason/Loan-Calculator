@@ -37,7 +37,6 @@ Partial Class Form2
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -183,21 +182,11 @@ Partial Class Form2
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
-        Me.Label8.Location = New System.Drawing.Point(108, 116)
+        Me.Label8.Location = New System.Drawing.Point(108, 82)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(184, 24)
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Please enter loan #1"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
-        Me.Label9.Location = New System.Drawing.Point(106, 73)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(60, 24)
-        Me.Label9.TabIndex = 22
-        Me.Label9.Text = "Loan#"
         '
         'Form2
         '
@@ -205,7 +194,6 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.ComboBox2)
@@ -244,5 +232,4 @@ Partial Class Form2
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
 End Class

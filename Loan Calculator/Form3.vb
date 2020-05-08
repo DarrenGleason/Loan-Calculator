@@ -18,8 +18,24 @@
         '5) When principal of loan reaches 0, move on to next loan 
         '6) Repeat steps until principle of last loan <=0
 
+        'For k As Integer = 0 To Form2.loans.Length
+        'Console.WriteLine(Form2.loans(k).interest)
+        ' Next
 
 
+        For i As Integer = 0 To Form2.loans.Length - 1
+            For j As Integer = i + 1 To Form2.loans.Length - 1
+                If Form2.loans(i).interest > Form2.loans(j).interest Then
+                    swapem(Form2.loans(i), Form2.loans(j))
+                End If
+            Next
+        Next
+
+
+
+        'Console.WriteLine(Form2.loans(0).interest)
+
+        'Form4.Label1.Text = Form2.loans.Length
 
         Form4.Show()
         Me.Hide()
