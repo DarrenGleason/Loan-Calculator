@@ -8,14 +8,17 @@ End Structure
 Public Class Form2
     Public loans(Form5.loanNum + 1) As loan  'Array of loan structs which contains as many loans as are entered on Form2
     Dim i As Integer 'i is initialized in FormLoad
-
-    Sub initem()  'Initialize loans struct based on what is entered on Form5(The number of loans)
+    Private Sub initem()  'Initialize loans struct based on what is entered on Form5(The number of loans)
+        Dim count As Integer = 0
         For num As Integer = 0 To Form5.loanNum - 1
             loans(num).name = "N/A"
             loans(num).principle = "000"
             loans(num).interest = 0.0
             loans(num).period = -1
+            count = count + 1
         Next
+        Console.WriteLine(Form5.loanNum)
+
 
     End Sub
 
@@ -25,16 +28,11 @@ Public Class Form2
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        Console.WriteLine(Form5.loanNum)
         loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
         loans(i).principle = TextBox2.Text
         loans(i).interest = ComboBox2.Text
         loans(i).period = ComboBox1.Text
-
-        Console.WriteLine(loans(i).name)
-        Console.WriteLine(loans(i).principle)
-        Console.WriteLine(loans(i).interest)
-        Console.WriteLine(loans(i).period)
 
         If i = Form5.loanNum - 1 Then 'Checks if all loans have been entered
             Label7.Show()             'Shows "All loans have been entered" message
