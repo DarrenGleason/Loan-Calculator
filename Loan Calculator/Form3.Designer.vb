@@ -31,7 +31,6 @@ Partial Class Form3
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -112,21 +111,11 @@ Partial Class Form3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(71, 399)
+        Me.Label3.Location = New System.Drawing.Point(274, 401)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 24)
+        Me.Label3.Size = New System.Drawing.Size(129, 24)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Formula?"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(549, 381)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(86, 24)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Formula?"
+        Me.Label3.Text = "Error message"
         '
         'Button3
         '
@@ -158,7 +147,6 @@ Partial Class Form3
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
@@ -183,7 +171,6 @@ Partial Class Form3
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
 End Class

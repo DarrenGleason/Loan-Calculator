@@ -1,13 +1,5 @@
 ﻿Public Class Form3
 
-
-    Sub swapem(a As loan, b As loan) 'Takes two loan structs. Loan is defined on Form2
-        Dim temp As loan
-        temp = a
-        a = b
-        b = temp
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'Avalanche Method-Pay off highest interest loans first
         'Algorithm steps
@@ -15,23 +7,25 @@
         '2) Calculate monthly interest on each loan 
         '3) Subtract interest from monthly payment
         '4) Take remainder of payment and subtract from the principle of loan on top
-        '5) When principal of loan reaches 0, move on to next loan 
+        '5) When principle of loan reaches 0, move on to next loan 
         '6) Repeat steps until principle of last loan <=0
 
+
+        If TextBox1.Text = "" Then
+            Label3.Show()
+            Label3.Text = "Must enter monthly payment to continue!"
+            Exit Sub
+        End If
 
         For k As Integer = 0 To Form5.loanNum - 1
             Console.WriteLine(Form2.loans(k).interest)
         Next
 
-
+        '1) Sort array (Form2.loans) in descending order in terms of interest
         Dim tempname As String
         Dim tempprinciple As String
         Dim tempinterest As Double
         Dim tempperiod As Integer
-
-        ' For i As Integer = Form2.loans.Length - 1 To 1 Step -1
-        'For j As Integer = 0 To i - 1
-        'If Form2.loans(j).interest > Form2.loans(j + 1).interest Then
 
         For i As Integer = 0 To Form2.loans.Length - 1
             For j As Integer = i + 1 To Form2.loans.Length - 1
@@ -56,26 +50,38 @@
             Next
         Next
 
-
-        For k As Integer = 0 To Form5.loanNum - 1
-            Console.WriteLine(Form2.loans(k).interest)
+        '2) Calculate monthly interest on each loan 
+        Dim monthlyinterest As Double = 0 'Interest from all loans from one month
+        Dim loaninterest As Double        'Interest from one individual loan 
+        'Get interest from all loans in a month
+        For x As Integer = 0 To Form5.loanNum - 1
+            loaninterest = Form2.loans(x).principle * Form2.loans(x).interest
+            monthlyinterest += loaninterest
         Next
 
-        'Console.WriteLine(tempname)
-        'Console.WriteLine(tempprinciple)
-        'Console.WriteLine(tempinterest)
-        'Console.WriteLine(tempperiod)
+
+
 
         Form4.Show()
         Me.Hide()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If TextBox1.Text = "" Then
+            Label3.Show()
+            Label3.Text = "Must enter monthly payment to continue!"
+            Exit Sub
+        End If
+
         Form4.Show()
         Me.Hide()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Application.Exit()
+    End Sub
+
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label3.Hide()
     End Sub
 End Class
