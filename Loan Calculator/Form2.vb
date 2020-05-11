@@ -8,7 +8,10 @@ End Structure
 Public Class Form2
     Public loans(Form5.loanNum + 1) As loan  'Array of loan structs which contains as many loans as are entered on Form2
     Dim i As Integer 'i is initialized in FormLoad
-    Private Sub initem()  'Initialize loans struct based on what is entered on Form5(The number of loans)
+
+
+
+    Public Sub initem()  'Initialize loans struct based on what is entered on Form5(The number of loans)
         Dim count As Integer = 0
         For num As Integer = 0 To Form5.loanNum - 1
             loans(num).name = "N/A"
@@ -28,7 +31,6 @@ Public Class Form2
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Console.WriteLine(Form5.loanNum)
         loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
         loans(i).principle = TextBox2.Text
         loans(i).interest = ComboBox2.Text
@@ -62,8 +64,9 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         initem()            'Calls initem function above to initialize array of structs
-        Label7.Hide()       'Hides All Loans entered message
+        Label7.Hide()       'Hides All Loans entered message\
         Button3.Hide()      'Hides finished button
+        Label9.Text = "Number of loans-" + (Form5.loanNum).ToString
         i = 0               'Initializes i
     End Sub
 

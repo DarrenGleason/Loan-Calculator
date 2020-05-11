@@ -6,11 +6,12 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        loanNum = TextBox1.Text
         Me.Hide()
         Form2.Show()
 
 
-        loanNum = TextBox1.Text
+
 
     End Sub
 End Class

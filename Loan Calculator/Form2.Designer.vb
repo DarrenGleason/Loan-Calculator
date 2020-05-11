@@ -37,6 +37,7 @@ Partial Class Form2
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -133,7 +134,7 @@ Partial Class Form2
         Me.Button3.Location = New System.Drawing.Point(525, 134)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(179, 43)
-        Me.Button3.TabIndex = 6
+        Me.Button3.TabIndex = 5
         Me.Button3.Text = "Continue"
         Me.Button3.UseVisualStyleBackColor = False
         '
@@ -151,7 +152,7 @@ Partial Class Form2
         '
         Me.Button4.BackColor = System.Drawing.Color.LightCyan
         Me.Button4.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(657, 401)
+        Me.Button4.Location = New System.Drawing.Point(657, 357)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(131, 37)
         Me.Button4.TabIndex = 13
@@ -188,12 +189,21 @@ Partial Class Form2
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Please enter loan #1"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(107, 120)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(156, 24)
+        Me.Label9.TabIndex = 22
+        Me.Label9.Text = "Number of loans-"
+        '
         'Form2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.PaleTurquoise
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 406)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.ComboBox2)
@@ -209,9 +219,9 @@ Partial Class Form2
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Repayment Calculator"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -232,4 +242,5 @@ Partial Class Form2
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class
