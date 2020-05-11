@@ -1,5 +1,7 @@
-﻿Public Class Form3
+﻿Imports System.IO
+Public Class Form3
 
+    Public outputstring As String = ""
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'Avalanche Method-Pay off highest interest loans first
         'Algorithm steps
@@ -17,6 +19,9 @@
             Exit Sub
         End If
 
+        Form4.TextBox1.AppendText("Avalanche Method Report" & Environment.NewLine) 'Prints report in Form4.TextBox1
+        outputstring += "Avalanche Method Report\n"                                'Also saves report into string to output to some text file if the user wants to save a report
+
         For k As Integer = 0 To Form5.loanNum - 1
             Console.WriteLine(Form2.loans(k).interest)
         Next
@@ -26,7 +31,7 @@
         Dim tempprinciple As String
         Dim tempinterest As Double
         Dim tempperiod As Integer
-
+        'Bubble sort
         For i As Integer = 0 To Form2.loans.Length - 1
             For j As Integer = i + 1 To Form2.loans.Length - 1
                 If Form2.loans(i).interest < Form2.loans(j).interest Then
@@ -58,6 +63,17 @@
             loaninterest = Form2.loans(x).principle * Form2.loans(x).interest
             monthlyinterest += loaninterest
         Next
+
+        Form4.TextBox1.Text += Environment.NewLine
+        Form4.TextBox1.Text += "New Line"
+        outputstring += "New Line"
+
+
+        'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+        'ywriter.WriteLine("This is a test string")
+        'mywriter.Close()
+        'End Using
+
 
 
 
