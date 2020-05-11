@@ -10,8 +10,5 @@
         Me.Hide()
         Form2.Show()
 
-
-
-
     End Sub
 End Class

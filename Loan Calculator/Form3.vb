@@ -19,9 +19,7 @@
         '6) Repeat steps until principle of last loan <=0
 
 
-
-
-        For k As Integer = 0 To Form2.loans.GetUpperBound(0)
+        For k As Integer = 0 To Form5.loanNum - 1
             Console.WriteLine(Form2.loans(k).interest)
         Next
 
@@ -31,32 +29,35 @@
         Dim tempinterest As Double
         Dim tempperiod As Integer
 
+        ' For i As Integer = Form2.loans.Length - 1 To 1 Step -1
+        'For j As Integer = 0 To i - 1
+        'If Form2.loans(j).interest > Form2.loans(j + 1).interest Then
 
         For i As Integer = 0 To Form2.loans.Length - 1
             For j As Integer = i + 1 To Form2.loans.Length - 1
                 If Form2.loans(i).interest < Form2.loans(j).interest Then
                     'swapem
                     'temp=a
-                    tempname = Form2.loans(0).name
-                    tempprinciple = Form2.loans(0).principle
-                    tempinterest = Form2.loans(0).interest
-                    tempperiod = Form2.loans(0).period
+                    tempname = Form2.loans(i).name
+                    tempprinciple = Form2.loans(i).principle
+                    tempinterest = Form2.loans(i).interest
+                    tempperiod = Form2.loans(i).period
                     'a=b
-                    Form2.loans(0).name = Form2.loans(1).name
-                    Form2.loans(0).principle = Form2.loans(1).principle
-                    Form2.loans(0).interest = Form2.loans(1).interest
-                    Form2.loans(0).period = Form2.loans(1).period
+                    Form2.loans(i).name = Form2.loans(j).name
+                    Form2.loans(i).principle = Form2.loans(j).principle
+                    Form2.loans(i).interest = Form2.loans(j).interest
+                    Form2.loans(i).period = Form2.loans(j).period
                     'b=a
-                    Form2.loans(1).name = tempname
-                    Form2.loans(1).principle = tempprinciple
-                    Form2.loans(1).interest = tempinterest
-                    Form2.loans(1).period = tempperiod
+                    Form2.loans(j).name = tempname
+                    Form2.loans(j).principle = tempprinciple
+                    Form2.loans(j).interest = tempinterest
+                    Form2.loans(j).period = tempperiod
                 End If
             Next
         Next
 
 
-        For k As Integer = 0 To Form2.loans.GetUpperBound(0)
+        For k As Integer = 0 To Form5.loanNum - 1
             Console.WriteLine(Form2.loans(k).interest)
         Next
 

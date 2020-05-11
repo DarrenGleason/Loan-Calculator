@@ -20,9 +20,6 @@ Public Class Form2
             loans(num).period = -1
             count = count + 1
         Next
-        Console.WriteLine(Form5.loanNum)
-
-
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'Moves from Form2->Form3
@@ -66,7 +63,7 @@ Public Class Form2
         initem()            'Calls initem function above to initialize array of structs
         Label7.Hide()       'Hides All Loans entered message\
         Button3.Hide()      'Hides finished button
-        Label9.Text = "Number of loans-" + (Form5.loanNum).ToString
+        Label9.Text = "Number of loans-" + (Form5.loanNum).ToString 'Shows # of loans 
         i = 0               'Initializes i
     End Sub
 
