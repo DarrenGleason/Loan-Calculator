@@ -28,11 +28,11 @@ Partial Class Form3
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -85,28 +85,6 @@ Partial Class Form3
         Me.Button2.Text = "Try Avalanche Method"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(533, 84)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(201, 249)
-        Me.TextBox2.TabIndex = 5
-        Me.TextBox2.Text = "The Snowball Method is one way of paying off multiple loans. This method starts w" &
-    "ith payments on the account with the smallest balance, while paying the minimum " &
-    "amount on the larger accounts.  "
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(63, 84)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(201, 267)
-        Me.TextBox3.TabIndex = 4
-        Me.TextBox3.Text = resources.GetString("TextBox3.Text")
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -139,22 +117,40 @@ Partial Class Form3
         Me.Label5.Text = "P = Ai/(1-(1+i)^-N)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "P = Regular Payment" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A = Amount Borrowed" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "i = Periodic Inter" &
     "est" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "N = # of Payment Periods" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(67, 84)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(213, 264)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = resources.GetString("Label4.Text")
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(529, 84)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(208, 240)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = resources.GetString("Label6.Text")
+        '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
         Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Repayment Calculator"
@@ -168,9 +164,9 @@ Partial Class Form3
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label6 As Label
 End Class
