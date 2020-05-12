@@ -12,7 +12,6 @@ Public Class Form2
 
 
     Public Sub initem()  'Initialize loans struct based on what is entered on Form5(The number of loans)
-        Console.WriteLine(Form5.loanNum - 1)
         For num As Integer = 0 To Form5.loanNum - 1
             loans(num).name = "N/A"
             loans(num).principle = "000"
@@ -25,7 +24,6 @@ Public Class Form2
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'Moves from Form2->Form3
         Form3.Show()
         Me.Hide()
-        Console.WriteLine(loans.Length)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -67,7 +65,6 @@ Public Class Form2
         Button3.Hide()      'Hides finished button
         Label9.Text = "Number of loans-" + (Form5.loanNum).ToString 'Shows # of loans 
         i = 0               'Initializes i
-        Console.WriteLine(loans.Length)
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
