@@ -12,6 +12,9 @@ Public Class Form3
         '5) When principle of loan reaches 0, move on to next loan 
         '6) Repeat steps until principle of last loan <=0
 
+        Dim copyloans() As loan = Form2.loans
+        'Console.WriteLine(Form2.loans.Length)
+        'Console.WriteLine(copyloans.Length)
 
         If TextBox1.Text = "" Then
             Label3.Show()
@@ -26,7 +29,7 @@ Public Class Form3
         'Form4.TextBox1.Text += Environment.NewLine
 
         'For k As Integer = 0 To Form5.loanNum - 1
-        'Console.WriteLine(Form2.loans(k).interest)
+        'Console.WriteLine(copyloans(k).interest)
         'Next
 
         '1) Sort array (Form2.loans) in descending order in terms of interest
@@ -35,38 +38,39 @@ Public Class Form3
         Dim tempinterest As Double
         Dim tempperiod As Integer
         'Bubble sort
-        For i As Integer = 0 To Form2.loans.Length - 1
-            For j As Integer = i + 1 To Form2.loans.Length - 1
-                If Form2.loans(i).interest < Form2.loans(j).interest Then
+        For i As Integer = 0 To copyloans.Length - 1
+            For j As Integer = i + 1 To copyloans.Length - 1
+                If copyloans(i).interest < copyloans(j).interest Then
                     'swapem
                     'temp=a
-                    tempname = Form2.loans(i).name
-                    tempprinciple = Form2.loans(i).principle
-                    tempinterest = Form2.loans(i).interest
-                    tempperiod = Form2.loans(i).period
+                    tempname = copyloans(i).name
+                    tempprinciple = copyloans(i).principle
+                    tempinterest = copyloans(i).interest
+                    tempperiod = copyloans(i).period
                     'a=b
-                    Form2.loans(i).name = Form2.loans(j).name
-                    Form2.loans(i).principle = Form2.loans(j).principle
-                    Form2.loans(i).interest = Form2.loans(j).interest
-                    Form2.loans(i).period = Form2.loans(j).period
+                    copyloans(i).name = copyloans(j).name
+                    copyloans(i).principle = copyloans(j).principle
+                    copyloans(i).interest = copyloans(j).interest
+                    copyloans(i).period = copyloans(j).period
                     'b=a
-                    Form2.loans(j).name = tempname
-                    Form2.loans(j).principle = tempprinciple
-                    Form2.loans(j).interest = tempinterest
-                    Form2.loans(j).period = tempperiod
+                    copyloans(j).name = tempname
+                    copyloans(j).principle = tempprinciple
+                    copyloans(j).interest = tempinterest
+                    copyloans(j).period = tempperiod
                 End If
             Next
         Next
+
 
         '2) Calculate monthly interest on each loan 
         Dim monthlyinterest As Double = 0 'Interest from all loans from one month
         Dim loaninterest As Double        'Interest from one individual loan 
         'Get interest from all loans in a month
         For x As Integer = 0 To Form5.loanNum - 1
-            loaninterest = Form2.loans(x).principle * Form2.loans(x).interest
-            Form4.TextBox1.Text += Form2.loans(x).name.ToString + " Interest-$" + loaninterest.ToString 'Output to textbox report
+            loaninterest = copyloans(x).principle * copyloans(x).interest
+            Form4.TextBox1.Text += copyloans(x).name.ToString + " Interest-$" + loaninterest.ToString 'Output to textbox report
             Form4.TextBox1.Text += Environment.NewLine
-            outputstring += Form2.loans(x).name.ToString + " Interest-$" + loaninterest.ToString + "\n"
+            outputstring += copyloans(x).name.ToString + " Interest-$" + loaninterest.ToString + "\n"
             monthlyinterest += loaninterest
         Next
         Form4.TextBox1.Text += "Total Monthly Interest-$" + monthlyinterest.ToString + Environment.NewLine
