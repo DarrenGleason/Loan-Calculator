@@ -62,13 +62,14 @@ Partial Class Form5
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.LightCyan
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
         Me.Button1.Location = New System.Drawing.Point(86, 114)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(121, 38)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Continue"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'TextBox1
         '

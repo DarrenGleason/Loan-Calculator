@@ -32,7 +32,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(88, 194)
+        Me.Label1.Location = New System.Drawing.Point(82, 86)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(615, 46)
         Me.Label1.TabIndex = 0
@@ -43,7 +43,7 @@ Partial Class Form1
         Me.Button1.BackColor = System.Drawing.Color.LightCyan
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.LightCyan
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(321, 282)
+        Me.Button1.Location = New System.Drawing.Point(315, 174)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(160, 46)
         Me.Button1.TabIndex = 1

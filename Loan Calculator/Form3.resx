@@ -118,28 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label4.Text" xml:space="preserve">
-    <value>The Avalanche 
-Method is one way of 
-paying off multiple 
-loans. This method 
-starts with paying 
-the minimum amount 
-for all loans, then 
-using what money is 
-left to pay off the loan 
-with the next largest 
-interest rate.</value>
+    <value>The Avalanche Method-
+1)Pay off monthly interest for all loans
+2)Take remainder of monthly 
+   payment and pay toward loan 
+   with highest monthly interest 
+   rate
+3)Repeat until all loans have been 
+ paid off
+</value>
   </data>
   <data name="Label6.Text" xml:space="preserve">
-    <value>The Snowball Method 
-is one way of paying 
-off multiple loans. 
-This method starts
- with payments on the 
-account with the 
-smallest balance, 
-while paying the 
-minimum amount on 
-the larger accounts.  </value>
+    <value>The Snowball Method-
+1)Pay off monthly interest for all loans
+2)Take remainder of monthly 
+   payment and pay toward loan 
+   with highest loan amount
+   rate
+3)Repeat until all loans have been 
+ paid off
+</value>
   </data>
 </root>

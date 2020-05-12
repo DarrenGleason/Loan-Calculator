@@ -2,7 +2,6 @@
     Public name As String
     Public principle As Double
     Public interest As Double
-    Public period As Integer
 End Structure
 
 Public Class Form2
@@ -16,7 +15,6 @@ Public Class Form2
             loans(num).name = "N/A"
             loans(num).principle = "000"
             loans(num).interest = 0.0
-            loans(num).period = -1
         Next
 
     End Sub
@@ -31,7 +29,6 @@ Public Class Form2
         loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
         loans(i).principle = TextBox2.Text
         loans(i).interest = ComboBox2.Text
-        loans(i).period = ComboBox1.Text
 
         If i = Form5.loanNum - 1 Then 'Checks if all loans have been entered
             Label7.Show()             'Shows "All loans have been entered" message
@@ -46,7 +43,6 @@ Public Class Form2
 
         TextBox1.Text = ""                  'Resets Textboxes/Comboboxes
         TextBox2.Text = ""
-        ComboBox1.Text = ""
         ComboBox2.Text = ""
         Label8.Text = "Please enter Loan# " + (i + 1).ToString 'Prints message
 

@@ -36,7 +36,6 @@ Public Class Form3
         Dim tempname As String
         Dim tempprinciple As String
         Dim tempinterest As Double
-        Dim tempperiod As Integer
         'Bubble sort
         For i As Integer = 0 To copyloans.Length - 1
             For j As Integer = i + 1 To copyloans.Length - 1
@@ -46,17 +45,14 @@ Public Class Form3
                     tempname = copyloans(i).name
                     tempprinciple = copyloans(i).principle
                     tempinterest = copyloans(i).interest
-                    tempperiod = copyloans(i).period
                     'a=b
                     copyloans(i).name = copyloans(j).name
                     copyloans(i).principle = copyloans(j).principle
                     copyloans(i).interest = copyloans(j).interest
-                    copyloans(i).period = copyloans(j).period
                     'b=a
                     copyloans(j).name = tempname
                     copyloans(j).principle = tempprinciple
                     copyloans(j).interest = tempinterest
-                    copyloans(j).period = tempperiod
                 End If
             Next
         Next
@@ -104,7 +100,6 @@ Public Class Form3
             'Console.WriteLine(copyloans(k).principle)
             'Next
 
-            Console.WriteLine(copyloans.Length)
 
             Form4.TextBox1.Text += "Principle on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + Environment.NewLine
             outputstring += "Principle on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + "\n"
