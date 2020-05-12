@@ -86,6 +86,26 @@ Public Class Form3
 
         '4) Take remainder of payment and subtract from the principle of loan on top
 
+        For k As Integer = 0 To copyloans.Length - 1
+            Console.WriteLine(copyloans(k).principle)
+        Next
+
+        Form4.TextBox1.Text += "Principle on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + Environment.NewLine
+        outputstring += "Principle on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + "\n"
+        copyloans(0).principle = copyloans(0).principle - principlepayment
+
+        If copyloans(0).principle < 0 Then
+            copyloans(1).principle = copyloans(1).principle + copyloans(0).principle
+            copyloans = copyloans.Skip(1).ToArray()
+        ElseIf copyloans(0).principle = 0 Then
+            copyloans = copyloans.Skip(1).ToArray()
+        End If
+        Form4.TextBox1.Text += "Principle after payment on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + Environment.NewLine
+
+        For k As Integer = 0 To copyloans.Length - 1
+            Console.WriteLine(copyloans(k).principle)
+        Next
+
         'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
         'ywriter.WriteLine("This is a test string")
         'mywriter.Close()

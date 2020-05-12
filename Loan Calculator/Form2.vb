@@ -1,33 +1,35 @@
 ﻿Public Structure loan
     Public name As String
-    Public principle As String
+    Public principle As Double
     Public interest As Double
     Public period As Integer
 End Structure
 
 Public Class Form2
-    Public loans(Form5.loanNum + 1) As loan  'Array of loan structs which contains as many loans as are entered on Form2
+    Public loans(Form5.loanNum - 1) As loan  'Array of loan structs which contains as many loans as are entered on Form2
     Dim i As Integer 'i is initialized in FormLoad
 
 
 
     Public Sub initem()  'Initialize loans struct based on what is entered on Form5(The number of loans)
-        Dim count As Integer = 0
+        Console.WriteLine(Form5.loanNum - 1)
         For num As Integer = 0 To Form5.loanNum - 1
             loans(num).name = "N/A"
             loans(num).principle = "000"
             loans(num).interest = 0.0
             loans(num).period = -1
-            count = count + 1
         Next
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'Moves from Form2->Form3
         Form3.Show()
         Me.Hide()
+        Console.WriteLine(loans.Length)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
         loans(i).principle = TextBox2.Text
         loans(i).interest = ComboBox2.Text
@@ -65,6 +67,7 @@ Public Class Form2
         Button3.Hide()      'Hides finished button
         Label9.Text = "Number of loans-" + (Form5.loanNum).ToString 'Shows # of loans 
         i = 0               'Initializes i
+        Console.WriteLine(loans.Length)
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
