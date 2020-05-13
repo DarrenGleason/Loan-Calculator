@@ -29,7 +29,7 @@ Public Class Form3
         'Prints report header in Form4.TextBox1
         Form4.TextBox1.AppendText("Avalanche Method Report-" & Environment.NewLine)
         'Also saves report into string to output to some text file if the user wants to save a report
-        outputstring += "Avalanche Method Report\n"
+        outputstring += "Avalanche Method Report" + Environment.NewLine
         'Stores Payment amount
         Dim paymentamount As Double = TextBox1.Text
         Form4.TextBox1.AppendText("Monthly Payment-$" + paymentamount.ToString & Environment.NewLine)
@@ -68,11 +68,11 @@ Public Class Form3
         While copyloans.Length <> 0
 
             Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-            outputstring += "--------------------------------------------------------\n"
+            outputstring += "--------------------------------------------------------" + Environment.NewLine
             Form4.TextBox1.Text += "Month-" + monthnum.ToString + "               Paying $" + paymentamount.ToString + " Per Month" + Environment.NewLine
-            outputstring += "Month-" + monthnum.ToString + "               Paying $" + paymentamount.ToString + " Per Month" + "\n"
+            outputstring += "Month-" + monthnum.ToString + "               Paying $" + paymentamount.ToString + " Per Month" + Environment.NewLine
             Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-            outputstring += "--------------------------------------------------------\n"
+            outputstring += "--------------------------------------------------------" + Environment.NewLine
             '3) Calculate monthly interest on each loan 
             Dim monthlyinterest As Double = 0 'Interest from all loans from one month
             Dim loaninterest As Double        'Interest from one individual loan 
@@ -81,16 +81,16 @@ Public Class Form3
             For x As Integer = 0 To copyloans.Length - 1
                 loaninterest = copyloans(x).principle * copyloans(x).interest
                 Form4.TextBox1.Text += copyloans(x).name.ToString + " Interest=$" + FormatNumber(loaninterest, 2).ToString + Environment.NewLine 'Output to textbox report
-                outputstring += copyloans(x).name.ToString + " Interest=$" + FormatNumber(loaninterest, 2).ToString + "\n"
+                outputstring += copyloans(x).name.ToString + " Interest=$" + FormatNumber(loaninterest, 2).ToString + Environment.NewLine
                 monthlyinterest += loaninterest
             Next
             Form4.TextBox1.Text += "Total Monthly Interest=$" + FormatNumber(monthlyinterest, 2).ToString + Environment.NewLine
-            outputstring += "Total Monthly Interest=$" + FormatNumber(monthlyinterest, 2).ToString + "\n"
+            outputstring += "Total Monthly Interest=$" + FormatNumber(monthlyinterest, 2).ToString + Environment.NewLine
             totalinterestdollars += monthlyinterest
             'Checks that payment is sufficient to pay off loans
             If (paymentamount < monthlyinterest) Then
                 Form4.TextBox1.Text += "Loans will never be paid off with this payment because monthly interest is greater than payment" + Environment.NewLine
-                outputstring += "Loans will never be paid off with this payment because monthly interest is greater than payment\n"
+                outputstring += "Loans will never be paid off with this payment because monthly interest is greater than payment" + Environment.NewLine
                 Form4.Show()
                 Me.Hide()
                 Exit Sub
@@ -101,34 +101,34 @@ Public Class Form3
             Dim principlepayment As Double = monthlypayment - monthlyinterest 'Amount of payment to go toward principle
 
             Form4.TextBox1.Text += "Left over monthly payment after paying interest=$" + FormatNumber(principlepayment, 2).ToString + Environment.NewLine
-            outputstring += "Left over monthly payment after paying interest=$" + FormatNumber(principlepayment, 2).ToString + "\n"
+            outputstring += "Left over monthly payment after paying interest=$" + FormatNumber(principlepayment, 2).ToString + Environment.NewLine
 
             '5) Take remainder of payment and subtract from the principle of loan on top
 
             Form4.TextBox1.Text += "Principle on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + Environment.NewLine
-            outputstring += "Principle on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + "\n"
+            outputstring += "Principle on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + Environment.NewLine
             copyloans(0).principle = copyloans(0).principle - principlepayment
             Form4.TextBox1.Text += "Principle after payment on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + Environment.NewLine
-            outputstring += "Principle after payment on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + "\n"
+            outputstring += "Principle after payment on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + Environment.NewLine
             '6) When loan principle reaches 0 go to next loan
             If copyloans.Length < 2 Then
                 If copyloans(0).principle < 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     Form4.TextBox1.Text += "Loan- " + copyloans(0).name + " has been paid off!" + Environment.NewLine
-                    outputstring += "Loan- " + copyloans(0).name + " has been paid off!\n"
+                    outputstring += "Loan- " + copyloans(0).name + " has been paid off!" + Environment.NewLine
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     Form4.TextBox1.Text += "Left Over Money =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2) + Environment.NewLine
-                    outputstring += "Left Over Money =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + "\n"
+                    outputstring += "Left Over Money =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + Environment.NewLine
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
-                    outputstring += "Congratulations You are now student debt free!\n"
+                    outputstring += "Congratulations You are now student debt free!" + Environment.NewLine
                     Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
-                    outputstring += "Number Of months=" + monthnum.ToString + "\n"
+                    outputstring += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
-                    outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + "\n"
+                    outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
                     Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
                         mywriter.WriteLine(outputstring)
                         mywriter.Close()
@@ -138,13 +138,13 @@ Public Class Form3
                     Exit Sub
                 ElseIf copyloans(0).principle = 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
-                    outputstring += "Congratulations You are now student debt free!\n"
+                    outputstring += "Congratulations You are now student debt free!" + Environment.NewLine
                     Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
-                    outputstring += "Number Of months=" + monthnum.ToString + "\n"
+                    outputstring += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
-                    outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + "\n"
+                    outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
                     Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
                         mywriter.WriteLine(outputstring)
                         mywriter.Close()
@@ -156,28 +156,29 @@ Public Class Form3
             Else
                 If copyloans(0).principle < 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     Form4.TextBox1.Text += "Loan-   " + copyloans(0).name + " has been paid off!" + Environment.NewLine
-                    outputstring += "Loan-   " + copyloans(0).name + " has been paid off!\n"
+                    outputstring += "Loan-   " + copyloans(0).name + " has been paid off!" + Environment.NewLine
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     Form4.TextBox1.Text += "Moving on to Loan-   " + copyloans(1).name + Environment.NewLine
-                    outputstring += "Moving on to Loan-   " + copyloans(1).name + "\n"
+                    outputstring += "Moving on to Loan-   " + copyloans(1).name + Environment.NewLine
                     copyloans(1).principle = copyloans(1).principle + copyloans(0).principle
                     Form4.TextBox1.Text += "Remainder of payment =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + Environment.NewLine
-                    outputstring += "Remainder of payment =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + "\n"
+                    outputstring += "Remainder of payment =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + Environment.NewLine
                     'Form4.TextBox1.Text += "Principle on loan-   " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + Environment.NewLine
                     'outputstring += "Principle after payment on loan-   " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + "\n"
                     Form4.TextBox1.Text += "Principle after payment on loan- " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + Environment.NewLine
-                    outputstring += "Principle after payment on loan- " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + "\n"
+                    outputstring += "Principle after payment on loan- " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + Environment.NewLine
                     'Gets rid of array element copyloans(0)
                     copyloans = copyloans.Skip(1).ToArray() 'https://stackoverflow.com/questions/7169259/vb-net-remove-first-element-from-array
                 ElseIf copyloans(0).principle = 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     Form4.TextBox1.Text += "Loan-   " + copyloans(0).name + " has been paid off!" + Environment.NewLine
+                    outputstring += "Loan-   " + copyloans(0).name + " has been paid off!" + Environment.NewLine
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    outputstring += "--------------------------------------------------------\n"
+                    outputstring += "--------------------------------------------------------" + Environment.NewLine
                     copyloans = copyloans.Skip(1).ToArray()
                 End If
             End If
