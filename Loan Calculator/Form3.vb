@@ -5,38 +5,41 @@ Public Class Form3
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'Avalanche Method-Pay off highest interest loans first
         'Algorithm steps
-        '1) Sort array (Form2.loans) in descending order in terms of interest
-        '2) Calculate monthly interest on each loan 
-        '3) Subtract interest from monthly payment
-        '4) Take remainder of payment and subtract from the principle of loan on top
-        '5) When principle of loan reaches 0, move on to next loan 
-        '6) Repeat steps until principle of last loan <=0
+        '1)Create Copy of loans struct to work with called copyloans
+        '2) Sort array (Form2.loans) in descending order in terms of interest
+        '3) Calculate monthly interest on each loan 
+        '4) Subtract interest from monthly payment
+        '5) Take remainder of payment and subtract from the principle of loan on top
+        '6) When principle of loan reaches 0, move on to next loan 
+        '7) Repeat steps until principle of last loan <=0
 
-        Dim copyloans() As loan = Form2.loans
-        'Console.WriteLine(Form2.loans.Length)
-        'Console.WriteLine(copyloans.Length)
+        'The output for the report is sent to From4.TextBox1.Text to be displayed
 
+
+        'Checks that monthly payment info has been entered
         If TextBox1.Text = "" Then
             Label3.Show()
             Label3.Text = "Must enter monthly payment to continue!"
             Exit Sub
         End If
 
-        Form4.TextBox1.AppendText("Avalanche Method Report-" & Environment.NewLine) 'Prints report in Form4.TextBox1
-        outputstring += "Avalanche Method Report\n"   'Also saves report into string to output to some text file if the user wants to save a report
+        '1)Create Copy of loans struct to work with called copyloans
+        Dim copyloans() As loan = Form2.loans
+
+        'Prints report header in Form4.TextBox1
+        Form4.TextBox1.AppendText("Avalanche Method Report-" & Environment.NewLine)
+        'Also saves report into string to output to some text file if the user wants to save a report
+        outputstring += "Avalanche Method Report\n"
+        'Stores Payment amount
         Dim paymentamount As Double = TextBox1.Text
         Form4.TextBox1.AppendText("Monthly Payment-$" + paymentamount.ToString & Environment.NewLine)
-        'Form4.TextBox1.Text += Environment.NewLine
 
-        'For k As Integer = 0 To Form5.loanNum - 1
-        'Console.WriteLine(copyloans(k).interest)
-        'Next
-
-        '1) Sort array (Form2.loans) in descending order in terms of interest
+        '2) Sort array (Form2.loans) in descending order in terms of interest
         Dim tempname As String
         Dim tempprinciple As String
         Dim tempinterest As Double
-        'Bubble sort
+
+        'Bubble sort for interest
         For i As Integer = 0 To copyloans.Length - 1
             For j As Integer = i + 1 To copyloans.Length - 1
                 If copyloans(i).interest < copyloans(j).interest Then
@@ -57,70 +60,95 @@ Public Class Form3
             Next
         Next
 
+        'Keeps track of how many months
         Dim monthnum As Integer = 1
-        '6)Repeat process until size of loop is empty
+        'Keeps track of how many interest dollars paid
+        Dim totalinterestdollars As Double = 0
+        '7) Repeat steps until principle of last loan <=0
         While copyloans.Length <> 0
-            Form4.TextBox1.Text += "Month-" + monthnum.ToString + Environment.NewLine
+
             Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-            '2) Calculate monthly interest on each loan 
+            outputstring += "--------------------------------------------------------\n"
+            Form4.TextBox1.Text += "Month-" + monthnum.ToString + "               Paying $" + paymentamount.ToString + " Per Month" + Environment.NewLine
+            outputstring += "Month-" + monthnum.ToString + "               Paying $" + paymentamount.ToString + " Per Month" + "\n"
+            Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
+            outputstring += "--------------------------------------------------------\n"
+            '3) Calculate monthly interest on each loan 
             Dim monthlyinterest As Double = 0 'Interest from all loans from one month
             Dim loaninterest As Double        'Interest from one individual loan 
+
             'Get interest from all loans in a month
             For x As Integer = 0 To copyloans.Length - 1
                 loaninterest = copyloans(x).principle * copyloans(x).interest
-                Form4.TextBox1.Text += copyloans(x).name.ToString + " Interest-$" + loaninterest.ToString 'Output to textbox report
-                Form4.TextBox1.Text += Environment.NewLine
-                outputstring += copyloans(x).name.ToString + " Interest-$" + loaninterest.ToString + "\n"
+                Form4.TextBox1.Text += copyloans(x).name.ToString + " Interest=$" + FormatNumber(loaninterest, 2).ToString + Environment.NewLine 'Output to textbox report
+                outputstring += copyloans(x).name.ToString + " Interest=$" + FormatNumber(loaninterest, 2).ToString + "\n"
                 monthlyinterest += loaninterest
             Next
-            Form4.TextBox1.Text += "Total Monthly Interest-$" + monthlyinterest.ToString + Environment.NewLine
-            outputstring += "Total Monthly Interest-$" + monthlyinterest.ToString + "\n"
-
+            Form4.TextBox1.Text += "Total Monthly Interest=$" + FormatNumber(monthlyinterest, 2).ToString + Environment.NewLine
+            outputstring += "Total Monthly Interest=$" + FormatNumber(monthlyinterest, 2).ToString + "\n"
+            totalinterestdollars += monthlyinterest
+            'Checks that payment is sufficient to pay off loans
             If (paymentamount < monthlyinterest) Then
-
                 Form4.TextBox1.Text += "Loans will never be paid off with this payment because monthly interest is greater than payment" + Environment.NewLine
+                outputstring += "Loans will never be paid off with this payment because monthly interest is greater than payment\n"
                 Form4.Show()
-
                 Me.Hide()
-
                 Exit Sub
-
             End If
 
-            '3) Subtract interest from monthly payment
-            Dim monthlypayment As Double = paymentamount
-            Dim principlepayment As Double = monthlypayment - monthlyinterest
+            '4) Subtract interest from monthly payment
+            Dim monthlypayment As Double = paymentamount 'Copy of monthlypayment
+            Dim principlepayment As Double = monthlypayment - monthlyinterest 'Amount of payment to go toward principle
 
-            Form4.TextBox1.Text += "Left over monthly payment after paying interest-$" + principlepayment.ToString + Environment.NewLine
-            outputstring += "Left over monthly payment after paying interest-$" + principlepayment.ToString + "\n"
+            Form4.TextBox1.Text += "Left over monthly payment after paying interest=$" + FormatNumber(principlepayment, 2).ToString + Environment.NewLine
+            outputstring += "Left over monthly payment after paying interest=$" + FormatNumber(principlepayment, 2).ToString + "\n"
 
-            '4) Take remainder of payment and subtract from the principle of loan on top
+            '5) Take remainder of payment and subtract from the principle of loan on top
 
-            'For k As Integer = 0 To copyloans.Length - 1
-            'Console.WriteLine(copyloans(k).principle)
-            'Next
-
-
-            Form4.TextBox1.Text += "Principle on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + Environment.NewLine
-            outputstring += "Principle on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + "\n"
+            Form4.TextBox1.Text += "Principle on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + Environment.NewLine
+            outputstring += "Principle on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + "\n"
             copyloans(0).principle = copyloans(0).principle - principlepayment
-            Form4.TextBox1.Text += "Principle after payment on loan-   " + copyloans(0).name + "=$" + copyloans(0).principle.ToString + Environment.NewLine
-
-
+            Form4.TextBox1.Text += "Principle after payment on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + Environment.NewLine
+            outputstring += "Principle after payment on loan- " + copyloans(0).name + "=$" + FormatNumber(copyloans(0).principle, 2).ToString + "\n"
+            '6) When loan principle reaches 0 go to next loan
             If copyloans.Length < 2 Then
                 If copyloans(0).principle < 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    Form4.TextBox1.Text += "Loan-   " + copyloans(0).name + " has been paid off!" + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
+                    Form4.TextBox1.Text += "Loan- " + copyloans(0).name + " has been paid off!" + Environment.NewLine
+                    outputstring += "Loan- " + copyloans(0).name + " has been paid off!\n"
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
-                    Form4.TextBox1.Text += "Remainder of payment -$" + Math.Abs(copyloans(0).principle).ToString + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
+                    Form4.TextBox1.Text += "Left Over Money =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2) + Environment.NewLine
+                    outputstring += "Left Over Money =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + "\n"
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
+                    outputstring += "Congratulations You are now student debt free!\n"
+                    Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
+                    outputstring += "Number Of months=" + monthnum.ToString + "\n"
+                    Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
+                    outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + "\n"
+                    Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+                        mywriter.WriteLine(outputstring)
+                        mywriter.Close()
+                    End Using
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
                 ElseIf copyloans(0).principle = 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
+                    outputstring += "Congratulations You are now student debt free!\n"
+                    Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
+                    outputstring += "Number Of months=" + monthnum.ToString + "\n"
+                    Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
+                    outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + "\n"
+                    Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+                        mywriter.WriteLine(outputstring)
+                        mywriter.Close()
+                    End Using
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
@@ -128,31 +156,39 @@ Public Class Form3
             Else
                 If copyloans(0).principle < 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
                     Form4.TextBox1.Text += "Loan-   " + copyloans(0).name + " has been paid off!" + Environment.NewLine
+                    outputstring += "Loan-   " + copyloans(0).name + " has been paid off!\n"
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
                     Form4.TextBox1.Text += "Moving on to Loan-   " + copyloans(1).name + Environment.NewLine
+                    outputstring += "Moving on to Loan-   " + copyloans(1).name + "\n"
                     copyloans(1).principle = copyloans(1).principle + copyloans(0).principle
-                    Form4.TextBox1.Text += "Remainder of payment -$" + Math.Abs(copyloans(0).principle).ToString + Environment.NewLine
-                    Form4.TextBox1.Text += "Principle after payment on loan-   " + copyloans(1).name + "=$" + copyloans(1).principle.ToString + Environment.NewLine
+                    Form4.TextBox1.Text += "Remainder of payment =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + Environment.NewLine
+                    outputstring += "Remainder of payment =$" + FormatNumber(Math.Abs(copyloans(0).principle), 2).ToString + "\n"
+                    'Form4.TextBox1.Text += "Principle on loan-   " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + Environment.NewLine
+                    'outputstring += "Principle after payment on loan-   " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + "\n"
+                    Form4.TextBox1.Text += "Principle after payment on loan- " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + Environment.NewLine
+                    outputstring += "Principle after payment on loan- " + copyloans(1).name + "=$" + FormatNumber(copyloans(1).principle, 2).ToString + "\n"
+                    'Gets rid of array element copyloans(0)
                     copyloans = copyloans.Skip(1).ToArray() 'https://stackoverflow.com/questions/7169259/vb-net-remove-first-element-from-array
                 ElseIf copyloans(0).principle = 0 Then
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
                     Form4.TextBox1.Text += "Loan-   " + copyloans(0).name + " has been paid off!" + Environment.NewLine
                     Form4.TextBox1.Text += "--------------------------------------------------------" + Environment.NewLine
+                    outputstring += "--------------------------------------------------------\n"
                     copyloans = copyloans.Skip(1).ToArray()
                 End If
             End If
 
             monthnum = monthnum + 1
         End While
-        'For k As Integer = 0 To copyloans.Length - 1
-        'sole.WriteLine(copyloans(k).principle)
-        'Next
 
-        'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
-        'ywriter.WriteLine("This is a test string")
-        'mywriter.Close()
-        'End Using
+        Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+            mywriter.WriteLine(outputstring)
+            mywriter.Close()
+        End Using
 
         Form4.Show()
         Me.Hide()
