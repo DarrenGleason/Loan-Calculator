@@ -111,6 +111,8 @@ Public Class Form3
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
                     Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
+                    Form4.TextBox2.Text = "Number Of months to pay off all loans=" + monthnum.ToString + Environment.NewLine
+                    Form4.TextBox2.Text += "Total Interest Dollars Paid=$" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
@@ -119,6 +121,8 @@ Public Class Form3
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
                     Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
+                    Form4.TextBox2.Text = "Number Of months to pay off all loans=" + monthnum.ToString + Environment.NewLine
+                    Form4.TextBox2.Text += "Total Interest Dollars Paid=$" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
@@ -145,6 +149,8 @@ Public Class Form3
             monthnum = monthnum + 1
         End While
 
+        Form4.TextBox2.Text = "Number Of months=" + monthnum.ToString + Environment.NewLine
+        Form4.TextBox2.Text = "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
         'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
         'mywriter.WriteLine(outputstring)
         'riter.Close()
@@ -263,6 +269,8 @@ Public Class Form3
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
                     Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
+                    Form4.TextBox2.Text = "Number Of months to pay off all loans=" + monthnum.ToString + Environment.NewLine
+                    Form4.TextBox2.Text += "Total Interest Dollars Paid=$" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
@@ -271,6 +279,8 @@ Public Class Form3
                     Form4.TextBox1.Text += "Congratulations You are now student debt free!" + Environment.NewLine
                     Form4.TextBox1.Text += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
+                    Form4.TextBox2.Text = "Number Of months to pay off all loans=" + monthnum.ToString + Environment.NewLine
+                    Form4.TextBox2.Text += "Total Interest Dollars Paid=$" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
