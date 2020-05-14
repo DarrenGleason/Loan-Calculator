@@ -25,8 +25,6 @@ Public Class Form3
 
         '1)Create Copy of loans struct to work with called copyloans
         Dim copyloans(Form2.loans.Length - 1) As loan
-
-        'copyloans = Form2.loans
         Array.Copy(Form2.loans, copyloans, copyloans.Length)
 
         'Prints report header in Form4.TextBox1
@@ -191,7 +189,8 @@ Public Class Form3
         End If
 
         '1)Create Copy of loans struct to work with called copyloans
-        Dim copyloans() As loan = Form2.loans
+        Dim copyloans(Form2.loans.Length - 1) As loan
+        Array.Copy(Form2.loans, copyloans, copyloans.Length)
 
         'Prints report header in Form4.TextBox1
         Form4.TextBox1.AppendText("Snowball Method Report-" & Environment.NewLine)
