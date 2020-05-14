@@ -28,7 +28,7 @@ Public Class Form2
 
         loans(i).name = TextBox1.Text       'Enters info from textboxes/combo boxes into loans array of structs
         loans(i).principle = TextBox2.Text
-        loans(i).interest = ComboBox2.Text
+        loans(i).interest = ComboBox2.Text / 100
 
         If i = Form5.loanNum - 1 Then 'Checks if all loans have been entered
             Label7.Show()             'Shows "All loans have been entered" message
