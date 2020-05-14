@@ -124,4 +124,16 @@
   <data name="avalanche" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avalanche.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="thinking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thinking.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="studentdebt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\studentdebt.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="debt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\debt.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="think2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\think2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

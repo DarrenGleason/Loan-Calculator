@@ -1,0 +1,50 @@
+Avalanche Method Report
+--------------------------------------------------------
+Month-1               Paying $50 Per Month
+--------------------------------------------------------
+a Interest=$2.00
+Total Monthly Interest=$2.00
+Left over monthly payment after paying interest=$48.00
+Principle on loan- a=$200.00
+Principle after payment on loan- a=$152.00
+--------------------------------------------------------
+Month-2               Paying $50 Per Month
+--------------------------------------------------------
+a Interest=$1.52
+Total Monthly Interest=$1.52
+Left over monthly payment after paying interest=$48.48
+Principle on loan- a=$152.00
+Principle after payment on loan- a=$103.52
+--------------------------------------------------------
+Month-3               Paying $50 Per Month
+--------------------------------------------------------
+a Interest=$1.04
+Total Monthly Interest=$1.04
+Left over monthly payment after paying interest=$48.96
+Principle on loan- a=$103.52
+Principle after payment on loan- a=$54.56
+--------------------------------------------------------
+Month-4               Paying $50 Per Month
+--------------------------------------------------------
+a Interest=$0.55
+Total Monthly Interest=$0.55
+Left over monthly payment after paying interest=$49.45
+Principle on loan- a=$54.56
+Principle after payment on loan- a=$5.10
+--------------------------------------------------------
+Month-5               Paying $50 Per Month
+--------------------------------------------------------
+a Interest=$0.05
+Total Monthly Interest=$0.05
+Left over monthly payment after paying interest=$49.95
+Principle on loan- a=$5.10
+Principle after payment on loan- a=$-44.85
+--------------------------------------------------------
+Loan- a has been paid off!
+--------------------------------------------------------
+Left Over Money =$44.85
+--------------------------------------------------------
+Congratulations You are now student debt free!
+Number Of months=5
+Total Interest Dollars Paid=5.15
+

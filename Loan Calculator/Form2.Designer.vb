@@ -36,6 +36,8 @@ Partial Class Form2
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -52,7 +54,7 @@ Partial Class Form2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(347, 90)
+        Me.Label2.Location = New System.Drawing.Point(269, 81)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(104, 24)
         Me.Label2.TabIndex = 8
@@ -62,7 +64,7 @@ Partial Class Form2
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(347, 165)
+        Me.Label3.Location = New System.Drawing.Point(269, 156)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(108, 24)
         Me.Label3.TabIndex = 9
@@ -72,11 +74,11 @@ Partial Class Form2
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(347, 238)
+        Me.Label4.Location = New System.Drawing.Point(269, 229)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(194, 24)
+        Me.Label4.Size = New System.Drawing.Size(249, 24)
         Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Monthly Interest Rate"
+        Me.Label4.Text = "Monthly Interest Rate(1=1%)"
         '
         'Label6
         '
@@ -91,7 +93,7 @@ Partial Class Form2
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(351, 117)
+        Me.TextBox1.Location = New System.Drawing.Point(273, 108)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(190, 30)
         Me.TextBox1.TabIndex = 0
@@ -99,7 +101,7 @@ Partial Class Form2
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(351, 192)
+        Me.TextBox2.Location = New System.Drawing.Point(273, 183)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(190, 30)
         Me.TextBox2.TabIndex = 1
@@ -108,7 +110,7 @@ Partial Class Form2
         '
         Me.Button1.BackColor = System.Drawing.Color.LightCyan
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(351, 323)
+        Me.Button1.Location = New System.Drawing.Point(273, 314)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(190, 43)
         Me.Button1.TabIndex = 4
@@ -119,7 +121,7 @@ Partial Class Form2
         '
         Me.Button3.BackColor = System.Drawing.Color.LightCyan
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(37, 323)
+        Me.Button3.Location = New System.Drawing.Point(569, 183)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(179, 43)
         Me.Button3.TabIndex = 3
@@ -141,8 +143,8 @@ Partial Class Form2
         '
         Me.ComboBox2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5"})
-        Me.ComboBox2.Location = New System.Drawing.Point(351, 263)
+        Me.ComboBox2.Items.AddRange(New Object() {"2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10"})
+        Me.ComboBox2.Location = New System.Drawing.Point(273, 254)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(190, 32)
         Me.ComboBox2.TabIndex = 2
@@ -151,7 +153,7 @@ Partial Class Form2
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
-        Me.Label7.Location = New System.Drawing.Point(31, 283)
+        Me.Label7.Location = New System.Drawing.Point(535, 143)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(254, 24)
         Me.Label7.TabIndex = 20
@@ -176,11 +178,21 @@ Partial Class Form2
         Me.Label9.TabIndex = 22
         Me.Label9.Text = "Number of loans-"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Loan_Calculator.My.Resources.Resources.think2
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 187)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(173, 170)
+        Me.PictureBox1.TabIndex = 23
+        Me.PictureBox1.TabStop = False
+        '
         'Form2
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 406)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -198,6 +210,7 @@ Partial Class Form2
         Me.Font = New System.Drawing.Font("Trebuchet MS", 14.25!)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -217,4 +230,5 @@ Partial Class Form2
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

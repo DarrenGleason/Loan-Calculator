@@ -157,6 +157,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Report.txt" />
+    <None Include="Resources\think2.jpg" />
+    <None Include="Resources\thinking.jpg" />
+    <None Include="Resources\debt.jpg" />
+    <None Include="Resources\studentdebt.jpg" />
     <None Include="Resources\avalanche.jpg" />
     <None Include="Resources\snowball.jpg" />
   </ItemGroup>
