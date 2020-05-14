@@ -23,15 +23,14 @@ Public Class Form4
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim files As System.IO.StreamWriter
-        'Opens the newly created text file
-        files = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\Public\Report.txt", True)
-        'Writes each line from the text box to the text file
-        files.WriteLine(TextBox1.Text)
-        'Closes the text file
-        files.Close()
-        'Runs the save dialog sequence, Does not use location that save dialog does...
+
+        'Borrowed from https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.savefiledialog?view=netcore-3.1
+        'And https://www.youtube.com/watch?v=qVRIyV5IKsc
+
+        SaveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
         SaveFileDialog1.ShowDialog()
+        System.IO.File.WriteAllText(SaveFileDialog1.FileName, TextBox1.Text)
+
 
     End Sub
 

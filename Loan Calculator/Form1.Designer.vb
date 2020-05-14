@@ -26,7 +26,6 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -77,15 +76,6 @@ Partial Class Form1
         Me.Button3.Text = "Quit"
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(0, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 24)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Label3"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -121,7 +111,6 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(800, 406)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label2)
@@ -143,7 +132,6 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox2 As PictureBox
 End Class
