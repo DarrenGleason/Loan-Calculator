@@ -24,7 +24,10 @@ Public Class Form3
         End If
 
         '1)Create Copy of loans struct to work with called copyloans
-        Dim copyloans() As loan = Form2.loans
+        Dim copyloans(Form2.loans.Length - 1) As loan
+
+        'copyloans = Form2.loans
+        Array.Copy(Form2.loans, copyloans, copyloans.Length)
 
         'Prints report header in Form4.TextBox1
         Form4.TextBox1.AppendText("Avalanche Method Report-" & Environment.NewLine)
@@ -57,6 +60,12 @@ Public Class Form3
                     copyloans(j).interest = tempinterest
                 End If
             Next
+        Next
+
+
+        Form4.TextBox3.Text = "Loan Order" + Environment.NewLine
+        For k As Integer = 0 To copyloans.Length - 1
+            Form4.TextBox3.Text += copyloans(k).name + Environment.NewLine
         Next
 
         'Keeps track of how many months
@@ -215,6 +224,11 @@ Public Class Form3
                     copyloans(j).interest = tempinterest
                 End If
             Next
+        Next
+
+        Form4.TextBox3.Text = "Loan Order" + Environment.NewLine
+        For k As Integer = 0 To copyloans.Length - 1
+            Form4.TextBox3.Text += copyloans(k).name + Environment.NewLine
         Next
 
         'Keeps track of how many months

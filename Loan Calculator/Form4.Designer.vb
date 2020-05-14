@@ -29,6 +29,8 @@ Partial Class Form4
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -91,11 +93,31 @@ Partial Class Form4
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(616, 12)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.TextBox3.Size = New System.Drawing.Size(175, 144)
+        Me.TextBox3.TabIndex = 6
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(344, 407)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(208, 24)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Save Report as .txt file"
+        '
         'Form4
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
@@ -119,4 +141,6 @@ Partial Class Form4
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label1 As Label
 End Class
