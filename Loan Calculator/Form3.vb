@@ -129,10 +129,10 @@ Public Class Form3
                     outputstring += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
                     outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
-                    Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
-                        mywriter.WriteLine(outputstring)
-                        mywriter.Close()
-                    End Using
+                    'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+                    'mywriter.WriteLine(outputstring)
+                    ' mywriter.Close()
+                    'End Using
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
@@ -145,10 +145,10 @@ Public Class Form3
                     outputstring += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2) + Environment.NewLine
                     outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
-                    Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
-                        mywriter.WriteLine(outputstring)
-                        mywriter.Close()
-                    End Using
+                    'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+                    'mywriter.WriteLine(outputstring)
+                    'mywriter.Close()
+                    'End Using
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
@@ -186,10 +186,10 @@ Public Class Form3
             monthnum = monthnum + 1
         End While
 
-        Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
-            mywriter.WriteLine(outputstring)
-            mywriter.Close()
-        End Using
+        'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+        'mywriter.WriteLine(outputstring)
+        'riter.Close()
+        'End Using
 
         Form4.Show()
         Me.Hide()
@@ -322,10 +322,10 @@ Public Class Form3
                     outputstring += "Number Of months=" + monthnum.ToString + Environment.NewLine
                     Form4.TextBox1.Text += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
                     outputstring += "Total Interest Dollars Paid=" + FormatNumber(totalinterestdollars, 2).ToString + Environment.NewLine
-                    Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
-                        mywriter.WriteLine(outputstring)
-                        mywriter.Close()
-                    End Using
+                    'Using mywriter As New StreamWriter("C:\Users\Paul\source\repos\Loan-Calculator\Loan Calculator\Report.txt")
+                    ' mywriter.WriteLine(outputstring)
+                    'mywriter.Close()
+                    'End Using
                     Form4.Show()
                     Me.Hide()
                     Exit Sub
